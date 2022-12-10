@@ -34,7 +34,7 @@ fun MovieListScreen(
     imageLoader: ImageLoader
 ) {
 
-    Log.i("AppDebug TAG", "MovieListScreen state.progressBarState: "+state.progressBarState)
+    Log.i("AppDebug TAG", "MovieListScreen state.progressBarState: " + state.progressBarState)
 
 
     BaseScreen(
@@ -58,11 +58,11 @@ fun MovieListScreen(
                         modifier = Modifier
                             .fillMaxSize()
                     ) {
-                items(20) {
-                        LoadingShimmerMovieItem(imageHeight = 220.dp)
+                        items(20) {
+                            LoadingShimmerMovieItem(imageHeight = 220.dp)
 
+                        }
                     }
-                }
                 }
 
                 AnimatedVisibility(visible = state.movies.isNotEmpty()) {

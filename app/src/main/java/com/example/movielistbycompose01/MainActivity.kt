@@ -41,7 +41,7 @@ class MainActivity : ComponentActivity() {
 
 
 
-    @ExperimentalFoundationApi
+    @OptIn(ExperimentalFoundationApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
@@ -84,7 +84,7 @@ class MainActivity : ComponentActivity() {
     ) {
         composable(
             route = Screen.MovieList.route,
-            exitTransition = {_, _ ->
+            exitTransition = {
                 slideOutHorizontally(
                     targetOffsetX = { -width },
                     animationSpec = tween(
@@ -93,7 +93,7 @@ class MainActivity : ComponentActivity() {
                     )
                 ) + fadeOut(animationSpec = tween(300))
             },
-            popEnterTransition = { initial, _ ->
+            popEnterTransition = {
                 slideInHorizontally(
                     initialOffsetX = { -width },
                     animationSpec = tween(
@@ -125,7 +125,7 @@ class MainActivity : ComponentActivity() {
         composable(
             route = Screen.MovieDetail.route + "/{MovieId}",
             arguments = Screen.MovieDetail.arguments,
-            enterTransition = { _, _ ->
+            enterTransition = {
                 slideInHorizontally(
                     initialOffsetX = { width },
                     animationSpec = tween(
@@ -134,7 +134,7 @@ class MainActivity : ComponentActivity() {
                     )
                 ) + fadeIn(animationSpec = tween(300))
             },
-            popExitTransition = { _, target ->
+            popExitTransition = {
                 slideOutHorizontally(
                     targetOffsetX = { width },
                     animationSpec = tween(
