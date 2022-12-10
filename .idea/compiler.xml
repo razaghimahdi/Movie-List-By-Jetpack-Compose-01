@@ -7,6 +7,8 @@
       <module name="Movie_List_By_Compose_01.movie.ui-movieDetail" target="11" />
       <module name="Movie_List_By_Compose_01.movie.ui_movieList" target="11" />
       <module name="MovieListByCompose01.buildSrc" target="11" />
+      <module name="MovieListByCompose01.buildSrc.main" target="11" />
+      <module name="MovieListByCompose01.buildSrc.test" target="11" />
     </bytecodeTargetLevel>
   </component>
 </project>
