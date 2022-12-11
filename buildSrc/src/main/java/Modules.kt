@@ -8,6 +8,7 @@ object Modules {
 
     const val movie = ":movie"
     const val movieDataSource = ":movie:movie-datasource"
+    const val movieDataSourceTest = ":movie:movie-datasource-test"
     const val movieDomain = ":movie:movie-domain"
     const val movieInteractors = ":movie:movie-interactors"
     const val ui_movieDetail = ":movie:ui-movieDetail"

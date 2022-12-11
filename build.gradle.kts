@@ -11,6 +11,7 @@ buildscript {
         classpath(Build.kotlinGradlePlugin)
         classpath(Build.sqlDelightGradlePlugin)
         classpath(Build.hiltAndroid)
+        classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:1.6.10")
 
     }
 }
