@@ -10,6 +10,6 @@ object AndroidX {
 }
 
 object AndroidXTest {
-    private const val version = "1.3.0"
+    private const val version = "1.5.0"
     const val runner = "androidx.test:runner:$version"
 }

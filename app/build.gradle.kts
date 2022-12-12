@@ -14,7 +14,7 @@ android {
         targetSdk = Android.targetSdk
         versionCode = Android.versionCode
         versionName = Android.versionName
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.example.movielistbycompose01.CustomTestRunner"
 
     }
 
@@ -47,6 +47,7 @@ dependencies {
     implementation(project(Modules.core))
     implementation(project(Modules.movieDomain))
     implementation(project(Modules.movieInteractors))
+    implementation(project(Modules.movieDataSource))
     implementation(project(Modules.ui_movieList))
     implementation(project(Modules.ui_movieDetail))
 
@@ -79,4 +80,11 @@ dependencies {
     implementation(SqlDelight.androidDriver)
 
 
+    androidTestImplementation(project(Modules.movieDataSourceTest))
+    androidTestImplementation(AndroidXTest.runner)
+    androidTestImplementation(ComposeTest.uiTestJunit4)
+    debugImplementation(ComposeTest.uiTestManifest)
+    androidTestImplementation(HiltTest.hiltAndroidTesting)
+    kaptAndroidTest(Hilt.compiler)
+    androidTestImplementation(Junit.junit4)
 }
