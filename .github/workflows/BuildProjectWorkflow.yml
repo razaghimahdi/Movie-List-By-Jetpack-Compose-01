@@ -1,4 +1,4 @@
-on: push
+on: fork
 name: Build project after push
 jobs:
   build:
