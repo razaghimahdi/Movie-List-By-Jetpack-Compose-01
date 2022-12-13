@@ -1,4 +1,7 @@
-on: fork
+on:
+  push:
+    branches:
+      - master
 name: Build project after push
 jobs:
   build:
