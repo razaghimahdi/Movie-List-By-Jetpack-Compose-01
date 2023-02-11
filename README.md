@@ -9,8 +9,7 @@
 | ![](screenshots/1.jpg) | ![](screenshots/2.jpg)  | ![](screenshots/3.jpg) |![](screenshots/4.jpg) |
 
 
-Just a Simple app by MVI Architecture, Use-cases and multi-module; tried to show why we should use multi-module,
-also unit-test is not complete yet it will be update as soon as possible.
+Just a Simple app by MVI Architecture, Use-cases and multi-module; tried to show why we should use multi-module.
 there is no much talk to say about what i did since everything that used in this project has a least a sample in my github,
 except multi-module.
 
