@@ -4,6 +4,10 @@
 
 #### A project base MVI Architecture, Use-cases and multi-module
 
+## Give a Star! ⭐
+If you like or are using this project to learn or start your solution, please give it a star. Thanks!
+
+
 | Shimmer Loading | retrieve data from cache | Paging | Detail each movie by retrieve data from cache |
 | :---: | :---: | :---: | :---: |
 | ![](screenshots/1.jpg) | ![](screenshots/2.jpg)  | ![](screenshots/3.jpg) |![](screenshots/4.jpg) |
