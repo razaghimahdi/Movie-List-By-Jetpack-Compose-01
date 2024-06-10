@@ -1,0 +1,124 @@
+[versions]
+applicationId = "com.example.movielistbycompose01"
+minSdk = "26"
+targetSdk = "34"
+compileSdk = "34"
+versionCode = "1"
+versionName = "1.0.0"
+kotlin = "1.9.0"
+app = "8.4.1"
+core = "1.13.1"
+androidxComposeCompiler = "1.5.0"
+lifecycle = "2.8.1"
+activityCompose = "1.9.0"
+bom = "2024.05.00"
+junit = "4.13.2"
+junit-ext = "1.1.5"
+espresso = "3.5.1"
+espresso-core = "3.5.1"
+appcompat = "1.7.0"
+material = "1.12.0"
+navigation = "2.7.7"
+kotlinxCoroutines = "1.8.0"
+hilt = "2.49"
+hiltExt = "1.2.0"
+androidxHiltNavigationCompose = "1.2.0"
+kotlinxSerializationJson = "1.5.1"
+kotlinxDatetime = "0.1.1"
+ksp = "1.9.24-1.0.20"
+coil = "2.5.0"
+org-jetbrains-kotlin-jvm = "1.9.0"
+sqlDelight = "1.5.1"
+ktor = "1.5.2"
+
+
+[libraries]
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
+lifecycler = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
+activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinxCoroutines" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "kotlinxCoroutines" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
+kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
+
+sqldelight-runtime = { group = "com.squareup.sqldelight", name = "runtime", version.ref = "sqlDelight" }
+sqldelight-android-driver = { group = "com.squareup.sqldelight", name = "android-driver", version.ref = "sqlDelight" }
+
+androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "bom" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-testing = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+compose-navigation = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-testing = { group = "com.google.dagger", name = "hilt-android-testing", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-android-compiler", version.ref = "hilt" }
+hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.ref = "hiltExt" }
+
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+junit-ext = { group = "androidx.test.ext", name = "junit", version.ref = "junit-ext" }
+espresso = { group = "androidx.test.espresso", name = "espresso:espresso-core", version.ref = "espresso" }
+espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+android-gradlePlugin = { group = "com.android.tools.build", name = "gradle", version.ref = "app" }
+kotlin-gradlePlugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+
+
+coil-kt = { group = "io.coil-kt", name = "coil", version.ref = "coil" }
+coil-kt-compose = { group = "io.coil-kt", name = "coil-compose", version.ref = "coil" }
+
+
+ktor-client-core = { module = "io.ktor:ktor-client-core", version.ref = "ktor" }
+ktor-client-android = { module = "io.ktor:ktor-client-android", version.ref = "ktor" }
+ktor-client-serialization = { module = "io.ktor:ktor-client-serialization", version.ref = "ktor" }
+ktor-client-mock = { module = "io.ktor:ktor-client-mock", version.ref = "ktor" }
+
+[bundles]
+compose = [
+    "compose-ui",
+    "compose-graphics",
+    "compose-preview",
+    "compose-material3",
+    "compose-navigation",
+    "compose-ui-tooling",
+    "compose-ui-testing",
+    "compose-ui-test-manifest",
+    "androidx-hilt-navigation-compose",
+    "compose-material-iconsExtended"
+]
+network = [
+    "ktor-client-core",
+    "ktor-client-android",
+    "ktor-client-mock",
+    "ktor-client-serialization"
+]
+cache = [
+    "sqldelight-runtime",
+    "sqldelight-android-driver"
+]
+kotlin = [
+    "kotlinx-coroutines-android",
+    "kotlinx-coroutines-guava",
+    "kotlinx-coroutines-test",
+    "kotlinx-serialization-json",
+    "kotlinx-datetime"
+]
+
+[plugins]
+kotlin = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+application = { id = "com.android.application", version.ref = "app" }
+library = { id = "com.android.library", version.ref = "app" }
+hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
+sqldelight = { id = "com.squareup.sqldelight", version.ref = "sqlDelight" }
+org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
