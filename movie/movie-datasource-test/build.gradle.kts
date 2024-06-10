@@ -1,22 +1,12 @@
-
-apply{
-    from("$rootDir/library-build.gradle")//if i made this file a kts then i couldn't add it like this.
+plugins {
+    id("example.movie.datasoruce")
 }
 
-plugins{
-    kotlin(KotlinPlugins.serialization) version Kotlin.version
-    id(SqlDelight.plugin)
-}
+
 
 
 dependencies{
-    "implementation"(project(Modules.movieDomain))
-    "implementation"(project(Modules.movieDataSource))
-    "implementation"(project(Modules.core))
-    "implementation"(Ktor.core)
-    "implementation"(Ktor.ktorClientMock)
-    "implementation"(Ktor.clientSerialization)
-    "implementation"(Ktor.android)
-
-
+    implementation(project(":core"))
+    implementation(project(":movie:movie-domain"))
+    implementation(project(":movie:movie-datasource"))
 }

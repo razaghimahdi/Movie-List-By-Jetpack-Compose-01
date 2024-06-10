@@ -1,16 +1,16 @@
-
-apply{
-    from("$rootDir/library-build.gradle")//if i made this file a kts then i couldn't add it like this.
+plugins {
+    id("example.android.library")
 }
+
 dependencies{
 
-    "implementation"(project(Modules.core))
-    "implementation"(project(Modules.movieDataSource))
-    "implementation"(project(Modules.movieDomain))
-    "testImplementation"(Junit.junit4)
-    "testImplementation"(Ktor.ktorClientMock)
-    "testImplementation"(project(Modules.movieDataSourceTest))
+    implementation(project(":core"))
+    implementation(project(":movie:movie-domain"))
+    implementation(project(":movie:movie-datasource"))
 
-    "implementation"(Kotlinx.coroutinesCore)
+    testImplementation(libs.junit)
+    testImplementation(libs.ktor.client.mock)
+    testImplementation(project(":movie:movie-datasource-test"))
+    implementation(libs.bundles.kotlin)
 
 }

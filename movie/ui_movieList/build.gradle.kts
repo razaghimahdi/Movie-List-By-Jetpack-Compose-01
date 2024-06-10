@@ -1,20 +1,26 @@
-apply{
-    from("$rootDir/android-library-build.gradle")//if i made this file a kts then i couldn't add it like this.
+plugins {
+    id("example.android.library.compose")
+    id("example.android.components")
+    id("wallpaper.android.hilt")
+    kotlin("kapt")
 }
+
 dependencies{
 
-    "implementation"(project(Modules.core))
-    "implementation"(project(Modules.components))
-    "implementation"(project(Modules.movieDomain))
-    "implementation"(project(Modules.movieInteractors))
+    implementation(project(":core"))
+    implementation(project(":components"))
+    implementation(project(":movie:movie-domain"))
+    implementation(project(":movie:movie-interactors"))
 
 
-    "implementation"(Coil.coil)
 
-    "implementation"(SqlDelight.androidDriver)
+    implementation(libs.sqldelight.android.driver)
 
-    "implementation"(Hilt.android)
-    "kapt"(Hilt.compiler)
+    implementation(libs.hilt.android)
+    kapt(libs.hilt.compiler)
 
+    implementation(libs.bundles.compose)
+    implementation(libs.compose.navigation)
+    implementation(libs.androidx.hilt.navigation.compose)
 
 }

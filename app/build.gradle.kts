@@ -1,90 +1,70 @@
 plugins {
-    id("com.android.application")
-    kotlin("android")
-    kotlin("kapt")
-    id("dagger.hilt.android.plugin")
+    id("example.android.application")
+    id("example.android.application.compose")
+    id("example.android.hilt")
+    id("example.android.build.flavor")
 }
 
 android {
-    compileSdk = Android.compileSdk
+    namespace = libs.versions.applicationId.get()
 
     defaultConfig {
-        applicationId = Android.appId
-        minSdk = Android.minSdk
-        targetSdk = Android.targetSdk
-        versionCode = Android.versionCode
-        versionName = Android.versionName
-        testInstrumentationRunner = "com.example.movielistbycompose01.CustomTestRunner"
+        applicationId =  libs.versions.applicationId.get()
+        versionCode = libs.versions.versionCode.get().toInt()
+        versionName = libs.versions.versionName.get()
 
     }
+
 
     buildTypes {
+        getByName("debug") {
+            manifestPlaceholders["backup"] = "true"
+        }
+
         getByName("release") {
-            isMinifyEnabled = false
+            isDebuggable = false
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
+            manifestPlaceholders["backup"] = "true"
         }
     }
-    buildFeatures {
-        compose = true
-    }
-    compileOptions {
-        sourceCompatibility = JavaVersion.VERSION_1_8
-        targetCompatibility = JavaVersion.VERSION_1_8
-    }
-    kotlinOptions {
-        jvmTarget = "1.8"
-    }
-    composeOptions {
-        kotlinCompilerExtensionVersion = Compose.composeVersion
-    }
-    packagingOptions {
-        exclude("META-INF/AL2.0")
-        exclude("META-INF/LGPL2.1")
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
     }
 }
 
 dependencies {
 
-    implementation(project(Modules.core))
-    implementation(project(Modules.movieDomain))
-    implementation(project(Modules.movieInteractors))
-    implementation(project(Modules.movieDataSource))
-    implementation(project(Modules.ui_movieList))
-    implementation(project(Modules.ui_movieDetail))
+    implementation(project(":core"))
+    implementation(project(":movie:movie-domain"))
+    implementation(project(":movie:movie-interactors"))
+    implementation(project(":movie:ui-movieDetail"))
+    implementation(project(":movie:ui_movieList"))
+    implementation(project(":movie:movie-datasource-test"))
 
 
 
-    implementation(Accompanist.animations)
+    implementation(libs.sqldelight.android.driver)
 
 
-    implementation(AndroidX.coreKtx)
-    implementation(AndroidX.appCompat)
-    implementation(AndroidX.lifecycleVmKtx)
+    implementation(libs.core.ktx)
+    implementation(libs.lifecycler)
+    implementation(libs.activity)
 
-    implementation(Coil.coil)
-
-    implementation(Compose.activity)
-    implementation(Compose.ui)
-    implementation(Compose.material)
-    implementation(Compose.tooling)
-    implementation(Compose.navigation)
-    implementation(Compose.hiltNavigation)
-    implementation(Compose.compose_icon)
-
-    implementation(Google.material)
-
-    implementation(Hilt.android)
-    kapt(Hilt.compiler)
-
-
-
-    implementation(SqlDelight.androidDriver)
-
-
-    androidTestImplementation(project(Modules.movieDataSourceTest))
-    androidTestImplementation(AndroidXTest.runner)
-    androidTestImplementation(ComposeTest.uiTestJunit4)
-    debugImplementation(ComposeTest.uiTestManifest)
-    androidTestImplementation(HiltTest.hiltAndroidTesting)
-    kaptAndroidTest(Hilt.compiler)
-    androidTestImplementation(Junit.junit4)
+    implementation(platform(libs.compose.bom))
+    implementation(libs.bundles.compose)
+    implementation(libs.compose.navigation)
+    implementation(libs.androidx.hilt.navigation.compose)
+    testImplementation(libs.junit)
+    androidTestImplementation(libs.junit.ext)
+    androidTestImplementation(libs.espresso)
+    androidTestImplementation(platform(libs.compose.bom))
+    androidTestImplementation(libs.compose.ui.testing)
+    debugImplementation(libs.compose.ui.tooling)
+    debugImplementation(libs.compose.ui.test.manifest)
 }

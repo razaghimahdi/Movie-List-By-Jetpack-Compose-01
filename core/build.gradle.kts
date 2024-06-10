@@ -1,6 +1,8 @@
-apply{
-    from("$rootDir/library-build.gradle")//if i made this file a kts then i couldn't add it like this.
+plugins {
+    id("example.android.library")
 }
-dependencies{
 
+
+dependencies {
+    implementation(libs.kotlinx.serialization.json)
 }
