@@ -1,6 +1,10 @@
 plugins {
-    id("example.android.library.compose")
+    id("example.android.application.compose")
     id("example.android.components")
+}
+
+android {
+    namespace = "com.example.ui_moviedetail"
 }
 
 dependencies{

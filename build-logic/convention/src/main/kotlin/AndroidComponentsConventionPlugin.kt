@@ -10,7 +10,8 @@ class AndroidComponentsConventionPlugin : Plugin<Project> {
     override fun apply(target: Project) {
         with(target) {
             pluginManager.apply {
-                apply("example.android.library.compose")
+                apply("example.android.application.compose")
+                apply("example.android.application")
             }
 
 
@@ -19,8 +20,9 @@ class AndroidComponentsConventionPlugin : Plugin<Project> {
                 add("testImplementation", kotlin("test"))
                 add("androidTestImplementation", kotlin("test"))
 
+                add("implementation", libs.findBundle("compose").get())
                 add("implementation", libs.findLibrary("coil.kt").get())
-                add("implementation", libs.findLibrary("coil.kt.compose").get()) 
+                add("implementation", libs.findLibrary("coil.kt.compose").get())
                 add("implementation", libs.findLibrary("kotlinx.coroutines.android").get())
 
             }

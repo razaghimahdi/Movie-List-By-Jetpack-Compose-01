@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="1.8">
-      <module name="Movie_List_By_Compose_01.app" target="11" />
-      <module name="Movie_List_By_Compose_01.components" target="11" />
-      <module name="Movie_List_By_Compose_01.movie.ui-movieDetail" target="11" />
-      <module name="Movie_List_By_Compose_01.movie.ui_movieList" target="11" />
+    <bytecodeTargetLevel target="17">
+      <module name="Movie_List_By_Compose_01.buildSrc" target="17" />
+      <module name="Movie_List_By_Compose_01.buildSrc.main" target="17" />
+      <module name="Movie_List_By_Compose_01.buildSrc.test" target="17" />
       <module name="MovieListByCompose01.buildSrc" target="11" />
       <module name="MovieListByCompose01.buildSrc.main" target="11" />
       <module name="MovieListByCompose01.buildSrc.test" target="11" />

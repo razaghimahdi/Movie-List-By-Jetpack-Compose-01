@@ -1,8 +1,12 @@
 plugins {
-    id("example.android.library.compose")
+    id("example.android.application.compose")
     id("example.android.components")
-    id("wallpaper.android.hilt")
-    kotlin("kapt")
+    id("example.android.hilt")
+    alias(libs.plugins.ksp)
+}
+
+android {
+    namespace = "com.example.ui_movielist"
 }
 
 dependencies{
@@ -17,9 +21,8 @@ dependencies{
     implementation(libs.sqldelight.android.driver)
 
     implementation(libs.hilt.android)
-    kapt(libs.hilt.compiler)
+    ksp(libs.hilt.compiler)
 
-    implementation(libs.bundles.compose)
     implementation(libs.compose.navigation)
     implementation(libs.androidx.hilt.navigation.compose)
 

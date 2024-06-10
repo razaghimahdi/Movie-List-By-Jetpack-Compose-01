@@ -52,7 +52,11 @@ dependencies {
     implementation(libs.sqldelight.android.driver)
 
 
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.compose)
+    
     implementation(libs.core.ktx)
+
     implementation(libs.lifecycler)
     implementation(libs.activity)
 

@@ -2,8 +2,8 @@ package com.example.movielistbycompose01.di
 
 import android.app.Application
 import com.example.movie_interactors.MovieInteractors
-import com.squareup.sqldelight.android.AndroidSqliteDriver
-import com.squareup.sqldelight.db.SqlDriver
+import app.cash.sqldelight.db.SqlDriver
+import app.cash.sqldelight.driver.android.AndroidSqliteDriver
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn

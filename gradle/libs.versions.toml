@@ -28,8 +28,9 @@ kotlinxDatetime = "0.1.1"
 ksp = "1.9.24-1.0.20"
 coil = "2.5.0"
 org-jetbrains-kotlin-jvm = "1.9.0"
-sqlDelight = "1.5.1"
+sqlDelight = "2.0.0-alpha05"
 ktor = "1.5.2"
+composeMaterial = "1.6.7"
 
 
 [libraries]
@@ -43,8 +44,8 @@ kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-cor
 kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "kotlinxSerializationJson" }
 kotlinx-datetime = { group = "org.jetbrains.kotlinx", name = "kotlinx-datetime", version.ref = "kotlinxDatetime" }
 
-sqldelight-runtime = { group = "com.squareup.sqldelight", name = "runtime", version.ref = "sqlDelight" }
-sqldelight-android-driver = { group = "com.squareup.sqldelight", name = "android-driver", version.ref = "sqlDelight" }
+sqldelight-runtime = { group = "app.cash.sqldelight", name = "runtime", version.ref = "sqlDelight" }
+sqldelight-android-driver = { group = "app.cash.sqldelight", name = "android-driver", version.ref = "sqlDelight" }
 
 androidx-hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "androidxHiltNavigationCompose" }
 compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "bom" }
@@ -53,6 +54,7 @@ compose-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
 compose-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
 compose-material-iconsExtended = { group = "androidx.compose.material", name = "material-icons-extended" }
 compose-material3 = { group = "androidx.compose.material3", name = "material3" }
+compose-material = { group = "androidx.compose.material", name = "material" , version.ref = "composeMaterial"}
 compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
 compose-ui-testing = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
@@ -65,7 +67,7 @@ hilt-ext-compiler = { group = "androidx.hilt", name = "hilt-compiler", version.r
 
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 junit-ext = { group = "androidx.test.ext", name = "junit", version.ref = "junit-ext" }
-espresso = { group = "androidx.test.espresso", name = "espresso:espresso-core", version.ref = "espresso" }
+espresso = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
 espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso-core" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
 material = { group = "com.google.android.material", name = "material", version.ref = "material" }
@@ -88,7 +90,7 @@ compose = [
     "compose-ui",
     "compose-graphics",
     "compose-preview",
-    "compose-material3",
+    "compose-material",
     "compose-navigation",
     "compose-ui-tooling",
     "compose-ui-testing",
@@ -120,5 +122,5 @@ application = { id = "com.android.application", version.ref = "app" }
 library = { id = "com.android.library", version.ref = "app" }
 hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
-sqldelight = { id = "com.squareup.sqldelight", version.ref = "sqlDelight" }
+sqldelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }

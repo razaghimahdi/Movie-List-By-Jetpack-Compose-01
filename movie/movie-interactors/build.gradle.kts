@@ -2,6 +2,9 @@ plugins {
     id("example.android.library")
 }
 
+android {
+    namespace = "com.example.interactors"
+}
 dependencies{
 
     implementation(project(":core"))
