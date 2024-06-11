@@ -45,6 +45,7 @@ dependencies {
     implementation(project(":movie:movie-interactors"))
     implementation(project(":movie:ui-movieDetail"))
     implementation(project(":movie:ui_movieList"))
+    implementation(project(":movie:movie-datasource"))
     implementation(project(":movie:movie-datasource-test"))
 
 
@@ -62,6 +63,8 @@ dependencies {
 
     implementation(libs.lifecycler)
     implementation(libs.activity)
+
+    implementation(libs.hilt.android.testing)
 
     implementation(platform(libs.compose.bom))
     implementation(libs.bundles.compose)
