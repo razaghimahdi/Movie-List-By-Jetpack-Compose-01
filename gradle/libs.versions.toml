@@ -25,7 +25,7 @@ hiltExt = "1.2.0"
 androidxHiltNavigationCompose = "1.2.0"
 kotlinxSerializationJson = "1.5.1"
 kotlinxDatetime = "0.1.1"
-ksp = "1.9.24-1.0.20"
+ksp = "1.9.0-1.0.13"
 coil = "2.5.0"
 org-jetbrains-kotlin-jvm = "1.9.0"
 sqlDelight = "2.0.0-alpha05"
@@ -124,3 +124,4 @@ hilt = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
 ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
 sqldelight = { id = "app.cash.sqldelight", version.ref = "sqlDelight" }
 org-jetbrains-kotlin-jvm = { id = "org.jetbrains.kotlin.jvm", version.ref = "org-jetbrains-kotlin-jvm" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }

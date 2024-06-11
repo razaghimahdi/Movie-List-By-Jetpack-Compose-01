@@ -11,6 +11,7 @@ class MovieDatasourceConventionPlugin : Plugin<Project> {
             pluginManager.apply {
                 apply("example.android.library")
                 apply("app.cash.sqldelight")
+                apply("kotlinx-serialization")
             }
 
 

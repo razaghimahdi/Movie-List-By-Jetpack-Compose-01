@@ -1,6 +1,7 @@
 plugins {
-    id("example.android.application.compose")
-    id("example.android.components")
+    id("example.android.library.compose")
+    id("example.android.library")
+    id("example.android.hilt")
 }
 
 android {
@@ -13,5 +14,12 @@ dependencies{
     implementation(project(":components"))
     implementation(project(":movie:movie-domain"))
     implementation(project(":movie:movie-interactors"))
+
+    implementation(libs.hilt.android)
+    ksp(libs.hilt.compiler)
+
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.compose)
+    implementation(libs.bundles.compose)
 
 }

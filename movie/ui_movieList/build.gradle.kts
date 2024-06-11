@@ -1,8 +1,8 @@
 plugins {
-    id("example.android.application.compose")
-    id("example.android.components")
+    id("example.android.library.compose")
+    id("example.android.library")
     id("example.android.hilt")
-    alias(libs.plugins.ksp)
+   // alias(libs.plugins.ksp)
 }
 
 android {
@@ -25,5 +25,9 @@ dependencies{
 
     implementation(libs.compose.navigation)
     implementation(libs.androidx.hilt.navigation.compose)
+
+    implementation(libs.coil.kt)
+    implementation(libs.coil.kt.compose)
+    implementation(libs.bundles.compose)
 
 }

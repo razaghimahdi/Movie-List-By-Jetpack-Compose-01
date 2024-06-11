@@ -54,7 +54,10 @@ dependencies {
 
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.compose)
-    
+
+    implementation(libs.material)
+    implementation(libs.appcompat)
+
     implementation(libs.core.ktx)
 
     implementation(libs.lifecycler)
