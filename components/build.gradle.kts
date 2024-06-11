@@ -1,8 +1,11 @@
-apply{
-    from("$rootDir/android-library-build.gradle")//if i made this file a kts then i couldn't add it like this.
+plugins {
+    id("example.android.application.compose")
+    id("example.android.components")
 }
-dependencies{
+android {
+    namespace = "com.example.components"
+}
 
-    "implementation"(project(Modules.core))
-
+dependencies {
+    implementation(project(":core"))
 }

@@ -18,6 +18,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import androidx.navigation.NavGraphBuilder
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import coil.ImageLoader
 import com.example.movielistbycompose01.ui.navigation.Screen
 import com.example.movielistbycompose01.ui.theme.BaseTheme
@@ -25,9 +28,6 @@ import com.example.ui_moviedetail.ui.MovieDetailScreen
 import com.example.ui_moviedetail.ui.MovieDetailViewModel
 import com.example.ui_movielist.ui.MovieListScreen
 import com.example.ui_movielist.ui.MovieListViewModel
-import com.google.accompanist.navigation.animation.AnimatedNavHost
-import com.google.accompanist.navigation.animation.composable
-import com.google.accompanist.navigation.animation.rememberAnimatedNavController
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -48,8 +48,8 @@ class MainActivity : ComponentActivity() {
             BaseTheme {
                 
                 BoxWithConstraints {
-                    val navController = rememberAnimatedNavController()
-                    AnimatedNavHost(
+                    val navController = rememberNavController()
+                     NavHost(
                         navController = navController,
                         startDestination = Screen.MovieList.route,
                         builder = {
@@ -108,8 +108,6 @@ class MainActivity : ComponentActivity() {
                 state = viewModel.state.value,
                 events = viewModel::onTriggerEvent,
                 navigateToDetailScreen = { MovieId ->
-                    Log.i("AppDebug", "addMovieList MovieId: "+MovieId)
-                    Log.i("AppDebug", "addMovieList Screen.MovieDetail.route: "+Screen.MovieDetail.route)
                     navController.navigate("${Screen.MovieDetail.route}/$MovieId")
                 },
                 imageLoader = imageLoader,
