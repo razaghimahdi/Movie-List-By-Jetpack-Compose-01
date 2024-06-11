@@ -3,6 +3,8 @@
 ## Developed by Mahdi Razzaghi Ghaleh
 
 #### A project base MVI Architecture, Use-cases and multi-module
+### 2024 Update: 
+#### In latest update, convention gradle plugin added to manage gradle in cleanest and easiest way
 
 ## Give a Star! ⭐
 If you like or are using this project to learn or start your solution, please give it a star. Thanks!
