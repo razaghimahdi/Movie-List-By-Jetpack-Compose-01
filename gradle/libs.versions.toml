@@ -30,12 +30,16 @@ org-jetbrains-kotlin-jvm = "1.9.0"
 sqlDelight = "2.0.0-alpha05"
 ktor = "1.5.2"
 composeMaterial = "1.6.7"
+multidexVer = "1.0.3"
 
 
 [libraries]
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core" }
 lifecycler = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle" }
 activity = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+
+multidex = { group = "com.android.support", name = "multidex", version.ref = "multidexVer" }
 
 kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "kotlinxCoroutines" }
 kotlinx-coroutines-guava = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-guava", version.ref = "kotlinxCoroutines" }

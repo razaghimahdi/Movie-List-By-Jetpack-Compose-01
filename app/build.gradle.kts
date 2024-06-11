@@ -12,7 +12,7 @@ android {
         applicationId =  libs.versions.applicationId.get()
         versionCode = libs.versions.versionCode.get().toInt()
         versionName = libs.versions.versionName.get()
-
+        multiDexEnabled = true
     }
 
 
@@ -52,6 +52,8 @@ dependencies {
 
     implementation(libs.sqldelight.android.driver)
 
+
+    implementation(libs.multidex)
 
     implementation(libs.coil.kt)
     implementation(libs.coil.kt.compose)
