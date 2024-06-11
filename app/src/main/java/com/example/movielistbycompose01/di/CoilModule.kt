@@ -2,6 +2,8 @@ package com.example.movielistbycompose01.di
 
 import android.app.Application
 import coil.ImageLoader
+import coil.disk.DiskCache
+import coil.memory.MemoryCache
 import com.example.movielistbycompose01.R
 import dagger.Module
 import dagger.Provides
@@ -22,10 +24,17 @@ object CoilModule {
     @Singleton
     fun provideImageLoader(app: Application): ImageLoader{
         return ImageLoader.Builder(app)
-            .error(R.drawable.error_image)
-            .placeholder(R.drawable.white_background)
-            .availableMemoryPercentage(0.25) // Don't know what is recommended?
-            .crossfade(true)
+            .memoryCache {
+                MemoryCache.Builder(app)
+                    .maxSizePercent(0.25)
+                    .build()
+            }
+            .diskCache {
+                DiskCache.Builder()
+                    .directory(app.cacheDir.resolve("image_cache"))
+                    .maxSizePercent(0.02)
+                    .build()
+            }
             .build()
     }
 }

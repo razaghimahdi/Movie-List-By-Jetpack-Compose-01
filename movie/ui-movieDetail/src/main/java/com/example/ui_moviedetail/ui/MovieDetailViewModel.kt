@@ -22,16 +22,16 @@ import javax.inject.Inject
 class MovieDetailViewModel
 @Inject
 constructor(
-private val getMovieDetail: GetMovieDetail,
-private val savedStateHandle: SavedStateHandle,
-private val logger: Logger,
-): ViewModel(){
+    private val getMovieDetail: GetMovieDetail,
+    private val savedStateHandle: SavedStateHandle,
+    private val logger: Logger,
+) : ViewModel() {
 
     val state: MutableState<MovieDetailState> = mutableStateOf(MovieDetailState())
 
     init {
         savedStateHandle.get<Int>("MovieId")?.let { MovieId ->
-            Log.i("AppDebug MovieDetailViewModel", " MovieId: "+MovieId)
+
             onTriggerEvent(MovieDetailEvents.GetMovie(MovieId))
         }
     }
@@ -41,29 +41,32 @@ private val logger: Logger,
             is MovieDetailEvents.GetMovie -> {
                 getMovieFromCache(event.id)
             }
+
             is MovieDetailEvents.OnRemoveHeadFromQueue -> {
                 removeHeadMessage()
             }
+
             is MovieDetailEvents.Error -> {
-                if(event.uiComponent is UIComponent.None){
+                if (event.uiComponent is UIComponent.None) {
                     logger.log("getMovies: ${(event.uiComponent as UIComponent.None).message}")
-                }
-                else{
+                } else {
                     appendToMessageQueue(event.uiComponent)
                 }
             }
         }
     }
 
-    private fun getMovieFromCache(id: Int){
+    private fun getMovieFromCache(id: Int) {
         getMovieDetail.execute(id).onEach { dataState ->
-            when(dataState){
+            when (dataState) {
                 is DataState.Loading -> {
                     state.value = state.value.copy(progressBarState = dataState.progressBarState)
                 }
+
                 is DataState.Data -> {
                     state.value = state.value.copy(movie = dataState.data)
                 }
+
                 is DataState.Response -> {
                     // TODO(Handle errors)
                 }
@@ -71,7 +74,7 @@ private val logger: Logger,
         }.launchIn(viewModelScope)
     }
 
-    private fun appendToMessageQueue(uiComponent: UIComponent){
+    private fun appendToMessageQueue(uiComponent: UIComponent) {
         val queue = state.value.errorQueue
         queue.add(uiComponent)
         state.value = state.value.copy(errorQueue = Queue(mutableListOf())) // force recompose
@@ -84,7 +87,7 @@ private val logger: Logger,
             queue.remove() // can throw exception if empty
             state.value = state.value.copy(errorQueue = Queue(mutableListOf())) // force recompose
             state.value = state.value.copy(errorQueue = queue)
-        }catch (e: Exception){
+        } catch (e: Exception) {
             logger.log("Nothing to remove from DialogQueue")
         }
     }
